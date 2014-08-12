@@ -42,4 +42,4 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'enumerize'
 gem 'settingslogic'
 gem 'mina'
-gem 'pg'
+gem 'pg', group: :production
