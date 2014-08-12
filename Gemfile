@@ -43,3 +43,4 @@ gem 'enumerize'
 gem 'settingslogic'
 gem 'mina'
 gem 'pg', group: :production
+gem 'puma'
