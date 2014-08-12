@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
   before_filter :check_token
 
+  def index
+    render :text => 'helloworld!'
+  end
+
   def mobile_new
     user = User.create user_params
     if user.errors.empty?

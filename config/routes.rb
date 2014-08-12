@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'users#index'
   post 'users/mobile_new'   => 'users#mobile_new'
   post 'users/mobile_login' => 'users#mobile_login'
   # The priority is based upon order of creation: first created -> highest priority.
