@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :check_token
+  before_filter :check_token, except: :index
 
   def index
     render :text => 'helloworld!'
