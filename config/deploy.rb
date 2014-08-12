@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+# require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
@@ -14,7 +14,7 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 set :user, 'developer'
 set :domain, 'starroom_main'
 set :deploy_to,  '/home/developer/starroom'
-set :repository, '/home/developer/starroom_main'
+set :repository, 'git@github.com:starroom/main.git'
 set :branch, 'master'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
@@ -23,7 +23,7 @@ set :shared_paths, ['config/database.yml', 'log']
 
 desc "Push repository to the remote server"
 task :before_clone do
-  system "git push server #{branch}"
+  system "git push github #{branch}"
 end
 
 # Optional settings:
@@ -66,7 +66,6 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
-    p '11111'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
