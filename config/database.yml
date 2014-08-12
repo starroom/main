@@ -21,12 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql   
-  encoding: unicode   
-  database: starroom  
-  username: starroom 
-  password: 123456  
-  host: localhost   
-  port: 5432
-  pool: 5   
+  adapter: postgresql
+  database: starroom
+  pool: 5
   timeout: 5000
