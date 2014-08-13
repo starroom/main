@@ -13,8 +13,8 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 
 # set :domain, 'foobar.com'
 set :user, 'developer'
-# set :domain, 'starroom_main'
-set :domain, 'ubuntu'
+set :domain, 'starroom_main'
+# set :domain, 'ubuntu'
 set :deploy_to,  '/home/developer/starroom'
 set :repository, 'git@github.com:starroom/main.git'
 set :branch, 'master'
