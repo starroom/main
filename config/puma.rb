@@ -1,12 +1,12 @@
 #!/usr/bin/env puma
 
 environment "production"
-basedir = "/home/developer/starroom/current"
+basedir = "/home/developer/starroom"
 daemonize true
 threads 2,16
 
-#bind  "unix:///home/developer/starroom/tmp/puma.sock"
-#pidfile  "#{basedir}/current/tmp/puma.pid"
+bind  "unix:///home/developer/starroom/current/tmp/sockets/puma.sock"
+pidfile  "#{basedir}/current/tmp/puma.pid"
 state_path "#{basedir}/current/tmp/puma/state"
 preload_app!
 activate_control_app
