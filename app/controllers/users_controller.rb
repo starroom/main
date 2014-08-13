@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :check_token, except: :index
 
   def index
-    render :text => 'index!2222'
+    render :text => 'index!333'
   end
 
   def mobile_new

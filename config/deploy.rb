@@ -71,7 +71,7 @@ task :deploy => :environment do
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
-      queue! "#{rake} restart_puma"
+      queue! "RAILS_ENV=production bundle exec rake restart_puma"
     end
   end
 end
