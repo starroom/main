@@ -2,7 +2,7 @@
 
 environment "production"
 basedir = "/home/developer/starroom"
-# daemonize true
+daemonize true
 threads 2,16
 
 bind  "unix:///home/developer/starroom/current/tmp/sockets/puma.sock"
