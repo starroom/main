@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'weixin/validate'
+  get 'weixin/validate'
 
   root 'users#index'
   post 'users/mobile_new'   => 'users#mobile_new'
