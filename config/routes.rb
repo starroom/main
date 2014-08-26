@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'weixin/validate'
+
   root 'users#index'
   post 'users/mobile_new'   => 'users#mobile_new'
   post 'users/mobile_login' => 'users#mobile_login'
