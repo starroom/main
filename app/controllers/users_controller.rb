@@ -1,9 +1,27 @@
 class UsersController < ApplicationController
 
-  before_filter :check_token, except: :index
+  before_filter :check_token, except: [:index, :avatar, :avatar_show, :avatar_create]
 
   def index
-    render :text => 'index!7777'
+    render :text => "user index view!"
+  end
+
+  def avatar
+    @user = User.first
+  end
+
+  def avatar_create
+    @user = User.find(params[:user][:id])
+    @user.avatar = params[:user][:avatar]
+    if @user.save
+      redirect_to avatar_show_user_path(@user)
+    else
+      render :text => @user.errors.to_json
+    end 
+  end
+
+  def avatar_show
+    @user = User.find(params[:id])
   end
 
   def mobile_new

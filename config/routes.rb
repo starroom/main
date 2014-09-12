@@ -4,6 +4,16 @@ Rails.application.routes.draw do
   root 'users#index'
   post 'users/mobile_new'   => 'users#mobile_new'
   post 'users/mobile_login' => 'users#mobile_login'
+  resources :users do
+    member do 
+      get :avatar_show
+    end
+    collection do 
+      get :avatar
+      patch :avatar_create
+
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
